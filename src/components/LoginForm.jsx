@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import useAuth from '../hooks/useAuth';
 
-export default function LoginForm({ onLoginSuccess }) {
+const LoginForm = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { login, error } = useAuth();
@@ -38,4 +38,6 @@ export default function LoginForm({ onLoginSuccess }) {
       </button>
     </form>
   );
-}
+};
+
+export default LoginForm;

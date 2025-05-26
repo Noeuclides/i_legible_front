@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
 
-export default function WordForm({ onAdd }) {
+const WordForm = ({ onAdd }) => {
   const {
     register,
     handleSubmit,
@@ -80,4 +80,6 @@ export default function WordForm({ onAdd }) {
       </button>
     </form>
   );
-}
+};
+
+export default WordForm;
