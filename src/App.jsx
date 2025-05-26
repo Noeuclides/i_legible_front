@@ -10,8 +10,8 @@ function App() {
   const { token } = useAuth();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-50 to-white p-6 font-hand">
-    {/* <div className="min-h-screen bg-white text-gray-800 p-4"> */}
+    <div className="">
+      <div className="text-3xl bg-red-200 p-4">If this is red, Tailwind works</div>
       <Routes>
         <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
         <Route path="/about" element={<About />} />

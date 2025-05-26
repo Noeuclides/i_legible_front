@@ -2,7 +2,7 @@ import React from "react"
 
 const WordCard = ({ word, translation, context }) => {
     return (
-        <div className="bg-white/80 border-2 border-accent rounded-2xl shadow-lg p-6 font-hand relative">
+        <div className="bg-white/80 border-2 border-accent rounded-2xl shadow-lg p-6 relative">
             <span className="text-2xl text-ink">{word}</span>
             <span className="mx-3 text-accent text-2xl">→</span>
             <span className="text-xl text-ink">{translation}</span>

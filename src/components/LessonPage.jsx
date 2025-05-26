@@ -7,13 +7,28 @@ const LessonPage = () => {
   const [lesson, setLesson] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/v1/lessons/${id}`)
-      .then(res => res.json())
+    const token = localStorage.getItem('jwt');
+    fetch(`http://localhost:3000/api/v1/lessons/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then(res => {
+        if (!res.ok) throw new Error('Unauthorized');
+        return res.json();
+      })
       .then(setLesson)
       .catch(err => console.error('Failed to load lesson', err));
 
-    fetch(`http://localhost:3000/api/v1/lessons/${id}/vocabulary_entries`)
-      .then(res => res.json())
+    fetch(`http://localhost:3000/api/v1/lessons/${id}/vocabulary_entries`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then(res => {
+        if (!res.ok) throw new Error('Unauthorized');
+        return res.json();
+      })
       .then(setWords)
       .catch(err => console.error('Failed to load words', err));
   }, [id]);

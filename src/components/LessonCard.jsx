@@ -2,10 +2,16 @@ import { Link } from 'react-router-dom';
 
 const LessonCard = ({ lesson }) => {
   return (
-    <Link to={`/lessons/${lesson.id}`} className="bg-yellow-200 hover:bg-yellow-300 transition p-4 rounded-xl shadow-md border border-yellow-400 space-y-1">
-      <div className="text-xl font-hand">📒 {lesson.title}</div>
-      <div className="text-sm text-gray-600">🗓 {lesson.date}</div>
-      <div className="text-md italic">{lesson.summary}</div>
+    <Link
+      to={`/lessons/${lesson.id}`}
+      className="block w-full border border-blue-500 bg-[#fffbe6] p-4 no-underline mb-2"
+    >
+      <h2 className="font-handwriting text-xl text-black underline mb-2">
+        {lesson.title}
+      </h2>
+      <p className="font-handwriting text-sm text-black italic">
+        {lesson.summary}
+      </p>
     </Link>
   );
 };
