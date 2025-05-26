@@ -4,6 +4,25 @@ const useAuth = () => {
   const [token, setToken] = useState(() => localStorage.getItem('jwt'));
   const [error, setError] = useState(null);
 
+   // Validate token on mount or when token changes
+   useEffect(() => {
+    if (token) {
+      fetch('http://localhost:3000/api/v1/me', {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+        .then(res => {
+          if (!res.ok) {
+            setToken(null);
+            localStorage.removeItem('jwt');
+          }
+        })
+        .catch(() => {
+          setToken(null);
+          localStorage.removeItem('jwt');
+        });
+    }
+  }, [token]);
+
   const login = async (email, password) => {
     try {
       const res = await fetch('http://localhost:3000/api/v1/login', {

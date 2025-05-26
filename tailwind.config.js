@@ -6,8 +6,15 @@ export default {
     ],
     theme: {
         extend: {
+            colors: {
+                paper: '#fdf6e3',
+                ink: '#22223b',
+                accent: '#f6bd60',
+                highlight: '#b5ead7',
+            },
             fontFamily: {
                 hand: ['"Architects Daughter"', 'cursive'],
+                body: ['Nunito', 'sans-serif'],
             },
         },
     },
