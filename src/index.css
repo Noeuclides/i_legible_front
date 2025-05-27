@@ -4,12 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #fdf6e3;
-  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-  font-family: 'Nunito', 'Architects Daughter', cursive, sans-serif;
-}
-
-.font-hand {
-  font-family: 'Architects Daughter', cursive;
+@layer base {
+  body {
+    @apply m-0 font-body antialiased;
+  }
 }

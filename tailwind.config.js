@@ -5,18 +5,19 @@ export default {
         "./src/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-        extend: {
+      extend: {
             colors: {
                 paper: '#fdf6e3',
                 ink: '#22223b',
                 accent: '#f6bd60',
                 highlight: '#b5ead7',
             },
-            fontFamily: {
-                hand: ['"Architects Daughter"', 'cursive'],
-                body: ['Nunito', 'sans-serif'],
-            },
+        fontFamily: {
+          handwriting: ['"Architects Daughter"', 'cursive'],
+          body: ['Nunito', 'sans-serif'],
         },
+      },
     },
     plugins: [],
-}
+  }
+  
